@@ -1,0 +1,10 @@
+body { height: 3000px; }
+#box { width:900px; margin:200px 300px; overflow: hidden; }
+#contbox { position: relative; float: left; width:500px; height: 500px; border:5px solid #000; }
+#cont { position: absolute; left: 0; top:0; }
+#scroll { float: left; width:50px; height:500px; border:2px solid red; position: relative; margin-left: 50px;  }
+#item { height: 400px; margin-top: 50px; position: relative;  }
+a { position:absolute; left: 0; width: 50px; height:50px; background: #f69; text-align: center ; line-height:50px; font-size: 20px; font-weight: bold; text-decoration:none;  }
+#up { top:0; }
+#down { bottom:0; }
+#ii { width:40px; background:yellow; position:absolute; left: 5px; top:0; border-radius: 10px; }

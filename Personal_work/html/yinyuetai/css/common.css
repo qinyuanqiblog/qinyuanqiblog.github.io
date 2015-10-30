@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*清楚默认样式*/
+body, h1, h2, h3, h4, h5, h6, p, ul, li, ol, dl, dt, dd, div, a, i, b, em, strong, img, input{ margin:0; padding:0; }
+b, strong{ font-weight:normal; }
+i, em{ font-style:normal; }
+a{ text-decoration:none; }
+li{ list-style:none; }
+input{ border:none; background:none; outline:none; }
+textarea{ outline:none; resize:none; }
+
+/*  公用 */
+.clearFix:after{ content:''; clear:both; display:block; }
+.clearFix{ zoom:1; }
+.fl{ float:left; display:inline;}
+.fr{ float:right; display:inline; }
+
+.wrap{ width:1007px; margin: 0 auto; }
+.wrap978{ width:978px; margin:0 auto; }
+body img{ display:block; }
+body {
+    font: 12px/1.5 Tahoma,'\5FAE\8F6F\96C5\9ED1','Microsoft Yahei',"hiragino sans gb", Helvetica, Arial, "\5b8b\4f53", 'sans-serif';
+    color: #333;
+}
+
+/*index*/
+.bgf2{ background:#f2f2f2}
+.bgfff{ background: #fff; }
+
+.color_e35b72{ color:#e35b72; }
+.color_999{ color:#999; }
+.color_690{ color:#690; }
+
+.pt80{ padding-top:80px; }
+
+.mt20{ margin-top:20px; }
+
+
+.mb20{ margin-bottom:20px; }
+
+.mr22{ margin-right:22px; }
+.mr23{ margin-right:23px;}
+.mr20{ margin-right:20px; }
+.mr15{ margin-right:15px; }
+.mr10{ margin-right:10px; }
+.mr8{ margin-right: 8px; }
+.mr5{ margin-right:6px; }
+
+/*mv*/
+.wrap1000{ width:1000px; margin:0 auto; background:#fff; }
+.pt43{ padding-top:43px; }
+.w321{ width:323px; }
+
+.h30{ height: 30px; }
+
+/*list*/
+.wrap1000{ width: 1000px; margin: 0 auto;  }
+.wrp960{ width: 960px; margin:0 auto; background: #fff;  }
+.pt30{ padding:30px 18px 0 20px; }
+.pt42{ padding:42px 18px 0 20px; }
+
+
+
+
+
+
+

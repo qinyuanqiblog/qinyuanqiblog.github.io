@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+	*{ margin:0; padding:0; }
+	a{ text-decoration:none; }
+	li{ list-style:none; }
+	.clearFix:after{ content:''; clear:both; dispaly:block; }
+	.clearFix{ zoom:1; }
+	.fl{ float:left; }
+	.fr{ float:right; }
+	.maxbox{ margin:200px; width:305px; height:200px; border:1px solid #dfdfdf; position:relative; }
+	.top{ position:relative;  }
+	.top a{ padding:8px 14px 6px;  display:block; border-right:1px solid #eee;  background:#f7f7f7; border-bottom:1px solid #dfdfdf;}
+	.top a:hover{ border-bottom:none; }
+	.maxbox ul{ position:absolute; left:0; top:40px; display:none; background:#000;  width:100px; height:60px;}
+	.top:hover ul{ display:block; }
+	
+	
+</style>
+<body>
+	<div class="maxbox">
+    	<div class="top clearFix">
+        	<a class="fl" href="#">公告</a>
+            <ul>
+                <li>aaaaaaa</li>
+                <li>aaaaaaa</li>
+        	</ul>
+            <a class="fl" href="#">公告</a>
+            <a class="fl" href="#">公告</a>
+            <a class="fl" href="#">公告</a>
+            <a class="fl" href="#">公告</a>
+        </div>
+        
+         <ul class="u2" >
+        	<li>bbb</li>
+            <li>bbb</li>
+        </ul>
+         
+    </div>
+</body>
+</html>

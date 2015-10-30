@@ -1,0 +1,181 @@
+/*header*/
+.header{ background: #171717; height: 41px; }
+h1{ }
+.logo{ background:url(../image/1.png) no-repeat; text-indent: -9999em;
+	width: 88px; height: 32px; display: block; margin:5px 18px 0 4px;  }
+	.menus_l1{ position: relative; }
+	.menus_l1 a{ color:#ccc; font-size: 11px; padding: 11px 10px 12px 10px; display: block; }
+	
+	.menus_l1 b{ width:7px; height: 4px; background: url(../image/topbar_sprite2.png) no-repeat -223px -18px; margin: 7px 0 0 3px;}
+
+	/*header:hover效果*/
+	.menus_l1 a:hover{ color:#f69; background: #050505; }
+	.menus_l1 b:hover{ background: url(../image/topbar_sprite2.png) no-repeat -231px -18px;  }
+
+
+	.pos1{ position: absolute; left: 0; top:40px; display: none; z-index: 100 }
+	.pos1 a{ width:72px; height: 25px; padding:8px  0 0 8px; background: #111111; 5a840a}
+	.pos1 a:hover{ background: #5a840a; color: #ccc; }
+	.menus_l1:hover .pos1{ display:block; }
+	.menus_l2{ background: url(../image/topbar_sprite2.png) no-repeat -223px -22px; width:1px; height:16px; margin:12px 4px 0 4px;}
+	.menus_l1 .active{ color: #f49;}
+	.menus_l1_i1{ width: 24px; height: 17px; background: url(../image/topbar-new.png) no-repeat; position: absolute; left: 48px; top: 0; }
+	.search{ width:80px; height: 30px; background: #d9d9d9; position: relative; border-radius: 20%; margin-top:5px; margin-right: 4px; }
+	.input1{ position: absolute;left: 0; top: 0; width:15px; height: 29px;     }
+
+	.login{ padding-top: 10px; }
+	.login a{ font-size: 11px; color: #ccc; }
+	.login_a1{ margin-right: 7px; }
+	.login span{ font-size: 14px; color: #666; margin:0 10px 0 10px; }
+	.login a:hover{ color: #f69; }
+
+	/*nav*/
+	.nav{ position:relative; height:400px;}
+	.nav_img li{ position:absolute; left:0; top:0; }
+	.nav_img img{ width:1007px; height: 400px;  }
+	.nav_img_div{ position:relative; }
+	.nav_img h3{ position:absolute; left:0; top:200px; font-size:30px;  }
+	.nav_img p{ position:absolute; left:0; top:300px; }
+
+	.nav_btn{ position:absolute; left:330px; bottom:20px; }
+	.nav_btn a{ width: 13px; height: 12px; border-radius: 50%; background: #ccc; margin-right: 24px;  }
+	.nav_btn .nav_btn_active{ background:#f69; }
+
+	.nav_btn2{ display:none; }
+	.nav_btn2 a{ width:73px; height:73px; font-size:50px; text-align:center; line-height:73px; color:#fff; display:block; }
+	.nav_btn2_left{ position:absolute; left:30px; bottom:170px; }
+	.nav_btn2_right{ position:absolute; right:30px; bottom:170px; }
+	.nav:hover .nav_btn2{ display:block; }
+
+	/*first_run*/
+	.first_run{ padding-top:20px;  }
+	.h3bg1{ width:118px; height:39px; background:url(../image/ico_index.png) no-repeat 0 -46px; text-indent:-9999em; }
+	.first_run_top_uu a{ padding:7px 7px 9px; font-size:12px; color:#666;   }
+	.first_run_top_uu a:hover{ background:#690; color:#fff; }
+	.first_run_top_uu span{ background:url(../image/ico_index.png) no-repeat -70px 0; width:2px; height:10px;
+		margin:11px 9px 0 14px; }
+
+		.first_run_bottom{ position:relative; height:290px; }
+		.first_run_bottom ul{ margin-top:10px; position:absolute;  } 
+		.first_run_bottom li{ position:relative; }
+
+		.first_run_bottom_a1{ border:1px solid #ccc; display:block; position:relative; }
+		.first_run_bottom_img1{ width:468px; height:273px; border:2px solid #fff; }
+		.first_run_bottom a .span1{ width:468px; height:40px; background:#000; position:absolute; left:2px; bottom:2px; opacity:0.5; }
+		.first_run_bottom a .span3{ width:20px; height:20px; background:#689a04; color:#fff; font-size:12px; text-align:center;
+			line-height:20px; border-radius:50%; position:absolute; right:5px; bottom:5px; display:none; }
+
+			.first_run_bottom a h4{ font-size:11px; color:red; position:absolute; left:14px; bottom:23px; }
+			.first_run_bottom a p{ font-size:9px; color:#b4ff88; position:absolute; left:14px; bottom:7px; }
+			.first_run_bottom_i1{ background:url(../image/ico_play_718.png) no-repeat -4px -4px; position:absolute; left:214px; bottom:120px; width:53px; height:53px; display:block; display:none; }
+
+			.first_run_bottom a:hover{ border:1px solid #690;}
+			.first_run_bottom a:hover i{ display:block; }
+			.first_run_bottom a:hover .span3{ display:block; }
+
+			.first_run_bottom_img2{ width:220px; height:124px; border:2px solid #fff; } 
+			.first_run_bottom a .span2{ width:220px; height:40px; background:#000; position:absolute; left:2px; bottom:2px; opacity:0.5; }
+			.first_run_bottom_i2{ background:url(../image/ico_play_718.png) no-repeat -4px -4px; position:absolute; left:75px; bottom:42px; width:53px; height:53px; display:block; display:none; }
+
+			.first_run_bottom_pos{ width:224px; height:148px; position:absolute; left:0; top:129px; font-size:12px; border:1px solid #ccc; 
+				border-top:1px solid #fff; display:none; }
+				<!--hover-pos->
+				.first_run_bottom li:hover .first_run_bottom_pos{ display:block; }
+				.first_run_bottom_pos_p1{ margin-top:5px; padding-left:10px; }
+				.first_run_bottom_pos_logo{ margin:5px 0; padding-left:10px;  }
+				.first_run_bottom_pos_i{ width:20px; height:12px; background:url(../image/ico20_1113.png) no-repeat; }
+				.first_run_bottom_pos_b{ width:20px; height:12px; background:url(../image/ico20_1113.png) no-repeat 0 -20px; }
+				.first_run_bottom_pos_span1{ width:20px; height:15px; background:url(../image/ico20_1113.png) no-repeat 0 -42px; }
+				.first_run_bottom_pos_span2{ width:10px; height:8px; background:url(../image/ico20_1113.png) no-repeat 0 -66px; margin-top:5px; }
+				.first_run_bottom_pos_p2{ height:97px; background:#f6f9f1; margin-top:px; padding-left:10px; line-height:26px; }
+
+				.first_run_bottom_btn a{  width:40px; height:65px; font-size:20px; color:a3a3a3; text-align:center; line-height:65px; background:#ccc; display:block; }
+				.first_run_bottom_btn a:hover{ background:#f69; }
+				.first_run_bottom_btn_left{ position:absolute; left:1px; top:106px; }
+				.first_run_bottom_btn_right{ position:absolute; right:8px; top:106px; }
+
+				/*popular*/
+
+				.h3bg2{ width:137px; height:39px; background:url(../image/ico_index.png) no-repeat 0 -92px; text-indent:-9999em; }
+				.popular_l1{ border:1px solid #ccc; }
+				.popular_l1:hover{ border:1px solid #690; }
+				.popular_l1 .first_run_bottom_a1{ border:1px solid #fff; }
+				.popular_l1 .first_run_bottom_a2{ font-size:16px; color:#333; line-height:27px; margin-bottom:5px; display:block; }
+				.popular_l1 .first_run_bottom_a1:hover{ border:1px solid #fff; }
+				.popular_l1 .first_run_bottom_a2:hover{ border:none; color:#690; }
+				.popular_l1 img{ }
+				.popular_div1{ width:233px; height:266px; background:#fff; padding:11px 0 0 15px; }
+				.popular_div1 p{ font-size:11px; color:#666; line-height:21px; }
+
+				/*music*/
+				.h3bg3{ width:170px; height:63px; background:url(../image/ico_index.png) no-repeat 0 -137px; text-indent:-9999em; }
+
+				/*节目*/
+				.h3bg4{ width:143px; height:39px; background:url(../image/ico_index.png) no-repeat 0 -321px; text-indent:-9999em; }
+
+				/*口袋fen*/
+				.h3bg5{ width:158px; height:39px; background:url(../image/942D01407AFA721F4BE0D26958FF8410.png) no-repeat; text-indent:-9999em; }
+
+
+				/*音乐人*/
+				.h3bg6{ width:143px; height:39px; background:url(../image/ico_index.png) no-repeat 0 -276px; text-indent:-9999em; }
+
+				/*热门推荐*/
+				.h3bg7{ width:200px; height:40px; background:url(../image/ico_index.png) no-repeat 0 -231px; text-indent:-9999em; }
+
+				/*音乐精选*/
+				.h3bg8{ width:200px; height:40px; background:url(../image/ico_index.png) no-repeat 0 -504px; text-indent:-9999em; }
+
+				/*音乐资讯*/
+				.h3bg9{ width:200px; height:40px; background:url(../image/ico_index.png) no-repeat 0 -367px; text-indent:-9999em; }
+				.popular_l2 .zixun_uu{ position:relative; left:0; top:0;  margin:0; }
+				.zixun_uu li{ width:210px; height:28px;  line-height:26px; white-space:nowrap; overflow:hidden;
+					text-overflow:ellipsis; border:1px solid #ccc; margin-top:-1px;  padding-left:14px; background:#fff; }
+					.zixun_uu li:hover{ background:#666; }  
+					.zixun_uu a{ font-size:11px; color:#000; }
+					.zixun_uu a:hover{ border:none; color:#fff; }
+					.zixun_uu .zixun_uu_l1{ height:8px; border:1px solid #ccc; border-top:1px solid #fff; border-bottom:1px solid #fff; }
+					.span4{ position:absolute; left:7px; top:2px;; background:url(../image/news_tags.png) no-repeat; width:34px; height:24px; }
+					.popular_l2{ border:1px solid #ccc; }
+					.popular_l2:hover{ border:1px solid #690; }
+
+					/*精品悦单*/
+					.boutique{ padding-bottom:63px; border-bottom:1px solid #dcdcdc; }
+					.h3bg10{ width:200px; height:40px; background:url(../image/ico_index.png) no-repeat 0 -596px; text-indent:-9999em; }
+					.boutique_bottom{ margin-top:10px; position:relative; }
+					.boutique_bottom ul{ margin-top:10px; }
+					.boutique_bottom li{ border:1px solid #ccc; position:relative; }
+					.boutique_bottom li:hover{ border:1px solid #690;  }
+					.boutique_bottom_a1{  border:1px solid #ccc; position:absolute; left:10px; bottom:40px; }
+					.boutique_bottom_a2{ position:absolute; left:68px; bottom:42px; color:#c00; font-size:11px;  }
+
+					.boutique_bottom_img1{ width:220px; height:200px; border:2px solid #fff; }
+					.boutique_bottom_img2{ width:40px; height:40px; border:2px solid #fff; }
+					.boutique_bottom_div1{ width:206px; height:33px; background:#fff; padding:37px 0 0 18px;  font-size:11px; color:#333; }
+					.boutique_bottom_div1 p{ white-space:nowrap; overflow:hidden;text-overflow:ellipsis;}
+
+					/*猜你喜欢*/
+					.h3bg11{ width:200px; height:40px; background:url(../image/ico_index.png) no-repeat 0 -736px; text-indent:-9999em; }
+					.guess{  padding-top:30px; padding-bottom:20px;  height:250px; }
+					.first_run_top_uu i{ background:url(../image/ico20_1113.png) no-repeat -3px -142px; width:14px; height:16px; margin-top:12px; }
+					.first_run_top_uu span{  width:40px; display:block; }
+					.first_run_top_uu .first_run_top_uu_a4{ padding-top:none; }
+					.first_run_top_uu .first_run_top_uu_a4:hover{ }
+
+					/*猜猜*/
+					.likeyou{ height:128px; font-size:30px; color:#666; text-align:center; line-height:128px; position:relative; }
+					.likeyou a{  font-size:30px; color:#690; }
+					.likeyou span{ background:url(../image/ico_index.png) no-repeat 0 0; position:absolute; left:940px; top:0;  width:44px; height:33px; }
+
+					.footer div{ text-align:center; position:relative; }
+					.footer li{ padding-right:}
+					.footer ul{ margin-top:40px; margin-bottom:30px;  margin-left:300px; }
+					.footer ul a{ font-size:12px; color:#666;  float:left;}
+					.footer ul span{ background:url(../image/ico_index.png) no-repeat -70px 0; width:2px; height:10px; margin:0 10px;  float:left;
+						margin-top:8px;}
+						.footer p{ font-size:11px; color:#999; margin-bottom:12px; }
+						.footer a{ font-size:11px; color:#999;  }
+						.footer a:hover{ color:#690; }
+						.footer_img1{ position:absolute; right:14px; top:43px; }
+
+

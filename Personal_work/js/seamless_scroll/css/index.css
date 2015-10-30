@@ -1,0 +1,10 @@
+* { margin:0; padding: 0; }
+#box {  position: relative; width: 880px;  margin:200px auto; }
+#box2 { width: 880px; height: 240px; border:5px solid #f69; position: relative; overflow: hidden;  }
+ul {  position: absolute; left: 0; top:20px; }
+li { list-style: none; float: left; margin-right: 20px; border:1px solid red; cursor: pointer; }
+img { width: 200px; height: 200px; }
+a { position: absolute; top:0;  width: 50px; height: 240px; font-size: 30px; font-weight: bold; text-align: center;  line-height: 240px; background: #ccc; text-decoration: none; }
+a:hover { background: #f69; color:#fff; }
+#left { left: -100px; }
+#right {right:-100px; }

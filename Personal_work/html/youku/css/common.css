@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+/*清除默认样式*/
+body,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dd,a,i,b,em,strong,img,input{ margin:0; padding:0; }
+li{ list-style:none;}
+a{ text-decoration:none;}
+i,em{ font-style:normal;}
+b,strong{ font-weight:normal;}
+input{ border:none; background: none; outline:none;}
+textarea{ outline:none; resize:none;}
+
+
+/*公用*/
+.clearFix:after{ content:''; clear:both; display:block; }
+.clearFix{ zoom:1; }
+.fl{ float:left; display:inline; }
+.fr{ float:right; display:inline; }
+body{ font-family: 'Microsoft YaHei';font-size:12px;}
+.wrap{width:1000px; margin:0 auto; overflow:hidden;}
+.qyq_wrp970{ width:970px; margin:0 auto; }
+.ml{ margin-left:20px; }
+.wrapper{ width:970px; margin:0 auto; overflow:hidden;}
+a{ color:#333;}

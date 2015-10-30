@@ -1,0 +1,7 @@
+	#box { width:298px; margin:200px auto;  border:1px solid red;  height: 424px; text-align: center; background-color:#090a0e; }
+	#box input { width: 230px; height: 30px; margin-top:20px; border:1px solid #000; background: #fff; text-indent: 1em; font-size: 20px;  }
+	ul { overflow: hidden; padding:20px 0 40px 40px; background: #8B3A3A; margin-top:20px; }
+	span { margin-right: 5px; font-weight: bold; font-size: 20px; }
+	.red {color:red; }
+	li { list-style: none; float: left; width: 50px; height: 50px; line-height: 60px; background: #ccc; margin:5px; cursor: pointer; font-weight: bold; }
+	li:hover { color:#fff; background: #000; }

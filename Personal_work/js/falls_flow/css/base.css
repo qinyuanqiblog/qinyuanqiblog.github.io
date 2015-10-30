@@ -1,0 +1,15 @@
+/*清楚默认样式*/
+body, h1, h2, h3, h4, h5, h6, p, ul, li, ol, dl, dt, dd, div, a, i, b, em, strong, img, input{ margin:0; padding:0; }
+b, strong{ font-weight:normal; }
+i, em{ font-style:normal; }
+a{ text-decoration:none; }
+li{ list-style:none; }
+input{ border:none; background:none; outline:none; }
+textarea{ outline:none; resize:none; }
+
+/*  公用 */
+.clearFix:after{ content:''; clear:both; display:block; }
+.clearFix{ zoom:1; }
+.fl{ float:left; display:inline;} 	/*解决双边距bug*/
+.fr{ float:right; display:inline; }
+
