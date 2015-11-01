@@ -79,7 +79,7 @@ body{ position: relative; height: 100%; width: 100%; overflow:hidden; }
 .div2{  position:absolute; left:0; top:0; width: 100%; height: 100%;  display: none;  opacity:0.8; filter:alpha(opacity=80); }
 .div2 span {text-align: center; line-height: 20px; display: none; background: green; cursor: pointer; }
 
-.myself_box { width:600px; height: 376px; position: relative; left:33%; top:24%; z-index: 10;}
+.myself_box { width:600px; height: 376px; position: relative; left:33%; top:22.5%; z-index: 10;}
 #close_my {  position: absolute; ;right: -20px; top:2px; z-index: 20; background-color: #FF6A6A;cursor: pointer; display: none; color:#fff; font-size: 30px;}
 
 /*个人信息*/
