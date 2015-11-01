@@ -523,60 +523,83 @@ define(function (require, exports, module){
 
 
 
-			oPrevMask.onmouseover=function ()
-			{
-
-				startMove(oPrevArrow, {left: iInitPrevArrow+10}, iInterval);
-				startMove(oPrevArrowLight, {left: iInitPrevArrowLight+10, alpha:100}, iInterval);
-				startMove(oPrevTxt, {left: iInitPrevTxt-10, alpha:100}, iInterval);
-			};
-
-			oPrevMask.onmouseout=function ()
-			{
-
-				startMove(oPrevArrow, {left: iInitPrevArrow}, iInterval);
-				startMove(oPrevArrowLight, {left: iInitPrevArrowLight, alpha:0}, iInterval);
-				startMove(oPrevTxt, {left: iInitPrevTxt, alpha:0}, iInterval);
-			};
-
-			//自己动起来
-			setInterval(function (){
-				gotoImg(true);
-			}, 3000);
-			oPrevMask.onmousedown=function ()
-			{
-				gotoImg(true);
-			};
-
-			oNextMask.onmouseover=function ()
-			{
-				startMove(oNextArrow, {left: iInitNextArrow-10}, iInterval);
-				startMove(oNextArrowLight, {left: iInitNextArrowLight-10, alpha:100}, iInterval);
-				startMove(oNextTxt, {left: iInitNextTxt+10, alpha:100}, iInterval);
-			};
-
-			oNextMask.onmouseout=function ()
-			{
-				startMove(oNextArrow, {left: iInitNextArrow}, iInterval);
-				startMove(oNextArrowLight, {left: iInitNextArrowLight, alpha:0}, iInterval);
-				startMove(oNextTxt, {left: iInitNextTxt, alpha:0}, iInterval);
-			};
-
-			oNextMask.onmousedown=function ()
-			{
-				gotoImg(false);
-			};
-
-			function gotoImg(bLeft)
-			{
-				if(bLeft)
-				{
-					aLiInit.push(aLiInit.shift());
+				//自己动起来
+				var timer5=null;
+				time5();
+				function time5(){
+					timer5=setInterval(function (){
+						gotoImg(true);
+					}, 3000);
 				}
-				else
-				{
-					aLiInit.unshift(aLiInit.pop());
+				//第二版的图片加上移入事件
+				var oImgBtn=document.getElementById('img_btn');
+				
+				var aImgBtn=oImgBtn.getElementsByTagName('a');
+				for (var i=0; i<aImgBtn.length; i++){
+					aImgBtn[i].onmouseover=function (){
+						clearInterval(timer5);
+					};
+					aImgBtn[i].onmouseout=function (){
+						time5();
+					};
 				}
+
+				oPrevMask.onmousedown=function ()
+				{
+					clearInterval(timer5);
+					gotoImg(true);
+					return false;
+				};
+
+
+				oPrevMask.onmouseover=function ()
+				{
+
+					startMove(oPrevArrow, {left: iInitPrevArrow+10}, iInterval);
+					startMove(oPrevArrowLight, {left: iInitPrevArrowLight+10, alpha:100}, iInterval);
+					startMove(oPrevTxt, {left: iInitPrevTxt-10, alpha:100}, iInterval);
+				};
+
+				oPrevMask.onmouseout=function ()
+				{
+
+					startMove(oPrevArrow, {left: iInitPrevArrow}, iInterval);
+					startMove(oPrevArrowLight, {left: iInitPrevArrowLight, alpha:0}, iInterval);
+					startMove(oPrevTxt, {left: iInitPrevTxt, alpha:0}, iInterval);
+				};
+
+
+				oNextMask.onmouseover=function ()
+				{
+					startMove(oNextArrow, {left: iInitNextArrow-10}, iInterval);
+					startMove(oNextArrowLight, {left: iInitNextArrowLight-10, alpha:100}, iInterval);
+					startMove(oNextTxt, {left: iInitNextTxt+10, alpha:100}, iInterval);
+				};
+
+				oNextMask.onmouseout=function ()
+				{
+					startMove(oNextArrow, {left: iInitNextArrow}, iInterval);
+					startMove(oNextArrowLight, {left: iInitNextArrowLight, alpha:0}, iInterval);
+					startMove(oNextTxt, {left: iInitNextTxt, alpha:0}, iInterval);
+				};
+
+				oNextMask.onmousedown=function ()
+				{
+					clearInterval(timer5);
+					gotoImg(false);
+					return false;
+				};
+
+				function gotoImg(bLeft)
+				{
+					if(bLeft)
+					{
+						aLiInit.push(aLiInit.shift());
+					}
+					else
+					{
+						aLiInit.unshift(aLiInit.pop());
+					}
 
 				// oLine.style.display='none';
 

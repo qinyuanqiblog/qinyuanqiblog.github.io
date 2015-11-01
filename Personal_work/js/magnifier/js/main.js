@@ -8,94 +8,77 @@ define(function (require, exports, module){
 
 
 	exports.main=function (){
-		var oContentBox=document.getElementById('contentBox');
-		var oDrag=document.getElementById('drag');
-		var oImgBox=document.getElementById('imgBox');
-		var oImg=document.getElementById('img1');
-
-			//oContentBox移入
-			addEvent(oContentBox, 'mouseenter',fnOver);
-
-			//oContentBox移出
-			addEvent(oContentBox, 'mouseleave', function (){
-				oDrag.style.display='none';
-				oImgBox.style.display='none';
-			});
-
-			function fnOver(){
-
-
-				oDrag.style.display='block';
-				oImgBox.style.display='block';
-
-				
+		var oDiv=document.getElementById('div1');
+		var oMask=oDiv.children[1];
+		var oBig=oDiv.children[2];
+		var oImgBig=oBig.children[0];
 
 
 
-				//初始的left 和 top
-				var disX=0;
-				var disY=0;
-				//drag的最大移动距离
-				var iMaxH=0;
-				var iMaxW=0;
-				//图片的最大移动距离
-				var oImgMaxH=0;
-				var oImgMaxW=0;
+		oDiv.onmouseover=function ()
+		{
+			oMask.style.display='block';
+			oBig.style.display='block';
+		};
+		oDiv.onmouseout=function ()
+		{
+			oMask.style.display='none';
+			oBig.style.display='none';
+		};
 
-				addEvent(oDrag, 'mouseenter', fnDown);
+		oDiv.onmousemove=function (ev)
+		{
+			var oEvent=ev||event;
 
-				function fnDown(ev){
-					var oEvent=ev || event;
-					disX=oEvent.clientX-oDrag.offsetLeft;
-					disY=oEvent.clientY-oDrag.offsetTop;
-					
-
-					//drag的最大移动距离
-					iMaxH=oContentBox.offsetHeight-oDrag.offsetHeight;
-					iMaxW=oContentBox.offsetWidth-oDrag.offsetWidth;
-					//图片的最大移动距离
-					oImgMaxH=oImg.offsetHeight-oImgBox.offsetHeight;
-					oImgMaxW=oImg.offsetWidth-oImgBox.offsetWidth;
+			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			var scrollLeft=document.documentElement.scrollLeft||document.body.scrollLeft;
 
 
-					
 
-					addEvent(document, 'mousemove', fnMove);
-					addEvent(document, 'mouseup', fnUp);	
-					oDrag.setCapture && oDrag.setCapture();
-					return false;	
-				}
+			var l=oEvent.clientX+scrollLeft-oDiv.offsetLeft-oMask.offsetWidth/2;
+			var t=oEvent.clientY+scrollTop-oDiv.offsetTop-oMask.offsetHeight/2;
 
-				function fnMove(ev){	
-					var oEvent=ev || event;
-					var left=oEvent.clientX-disX;
-					var top=oEvent.clientY-disY;
-
-					if (left < 0){
-						left=0;
-					}else if (left > iMaxW){
-						left=iMaxW;
-					}
-
-					if (top < 0){
-						top=0;
-					}else if (top > iMaxH){
-						top=iMaxH;
-					}
-
-					oDrag.style.left=left+'px';
-					oDrag.style.top=top+'px';
-					oImg.style.left=-left/iMaxW*oImgMaxW+'px';
-					oImg.style.top=-top/iMaxH*oImgMaxH+'px';
-				}
-
-				function fnUp(){
-					removeEvent(document, 'mousemove', fnMove);
-					removeEvent(document, 'mouseup', fnUp);
-					oDrag.repleaseCapture && oDrag.repleaseCapture();	
-				}
+			if(l<0)
+			{
+				l=0;
+			}
+			else if(l>oDiv.offsetWidth-oMask.offsetWidth)
+			{
+				l=oDiv.offsetWidth-oMask.offsetWidth;
 			}
 
+			if(t<0)
+			{
+				t=0;
+			}
+			else if(t>oDiv.offsetHeight-oMask.offsetHeight)
+			{
+				t=oDiv.offsetHeight-oMask.offsetHeight;
+			}
+
+			oMask.style.left=l+'px';
+			oMask.style.top=t+'px';
+
+			//算大图片的位置
+			//img.left=mask.left*(img.w-bigdiv.w)/(div.w-mask.w)
+			oImgBig.style.left=-l*(oImgBig.offsetWidth-oBig.offsetWidth)/(oDiv.offsetWidth-oMask.offsetWidth)+'px';
+			oImgBig.style.top=-t*(oImgBig.offsetHeight-oBig.offsetHeight)/(oDiv.offsetHeight-oMask.offsetHeight)+'px';
+		};
+
+		var aA=document.getElementsByTagName('a');
+
+		for(var i=0;i<aA.length;i++)
+		{
+			var aImg=document.getElementsByTagName('img');
+			(function (index){
+				aA[i].onclick=function ()
+				{
+					aImg[0].src='images/m'+(index+1)+'.jpg';
+					aImg[1].src='images/b'+(index+1)+'.jpg';
+				};
+			})(i);
 		}
 
-	});
+	}
+
+});
