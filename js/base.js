@@ -65,35 +65,6 @@ define(function (require, exports, module){
 
 			return aResult;
 		},
-		startMove:function (obj, oParams, iTime, fnCallBackEnd)
-		{
-			var iInterval=45;
-			var iEndTime=(new Date()).getTime()+iTime;
-			var iTimes=Math.ceil(iTime/iInterval);
-			var oSpeed={};
-
-			if(typeof obj.timer=='undefined')
-			{
-				obj.timer=null;
-			}
-
-			for(var key in oParams)
-			{
-				oSpeed[key]=(oParams[key]-obj[key])/iTimes;
-			}
-
-			if(obj.timer)
-			{
-				clearInterval(obj.timer);
-			}
-			obj.timer=setInterval
-			(
-				function ()
-				{
-					doMove(obj, oParams, oSpeed, iEndTime, fnCallBackEnd);
-				}, iInterval
-				);
-		},
 		d2a:function (d)
 		{
 			return d*180/Math.PI;

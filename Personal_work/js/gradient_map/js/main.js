@@ -2,7 +2,6 @@
 define(function (require, exports, module){
 
 	var addEvent=require('base').addEvent;
-	var getStyle=require('base').getStyle;
 	var move=require('move').move;
 
 	exports.main=function (){
@@ -17,7 +16,6 @@ define(function (require, exports, module){
 		var col=7;
 		var W=700/col;
 		var H=400/row;
-
 
 		// 创建span
 		for (var r=0; r<row; r++)
@@ -66,8 +64,7 @@ define(function (require, exports, module){
 								if (index == aSpan.length-1)
 								{
 							// 最后一个运动完了
-							oImg.src
-							='images/'+aPath[now%aPath.length];
+							oImg.src='images/'+aPath[now%aPath.length];
 							next();
 						}
 					}	

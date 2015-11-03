@@ -16,6 +16,7 @@ define(function (require, exports, module){
 
 		//创建ul
 		var oUl=document.createElement('ul');
+		oUl.className='clearFix';
 		oBox2.appendChild(oUl);
 
 		// 创建li 添加图片

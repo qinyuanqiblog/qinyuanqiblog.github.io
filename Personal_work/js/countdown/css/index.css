@@ -1,4 +1,4 @@
-.box { background: #000; width: 1000px; height: 500px; margin:200px auto; font-size:50px; color:#fff; text-align: center;   }
+.box { background: #000; width: 1000px; height: 500px; margin:100px auto; font-size:50px; color:#fff; text-align: center;   }
 .box span { font-size: 80px; color:red; margin-top:20px; display: block; font-weight:bold; font-weight:bold; }
 .box p { color: green; font-weight: bold; }
 .box input { height: 50px; width: 100px; background: #fff; float: left; padding-left: 5px;font-size: 20px; font-weight: bold; color:#f69; }

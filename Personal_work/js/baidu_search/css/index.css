@@ -1,4 +1,4 @@
-	body { text-align: center; padding-top: 200px }
+	body { text-align: center; padding-top: 100px }
 	#box { position: relative; width: 651px; margin:50px auto; }
 	img { width: 270px; height: 128px; }
 	input[type=text] { width: 540px; height: 40px; text-indent: 1em;  border:1px solid blue;}

@@ -11,7 +11,7 @@ define(function (require, exports, module){
 			obj.onmouseenter=function (ev){
 				var oEvent=ev || Event;
 				var n=getN(obj, oEvent);
-				console.log(n)
+			
 				switch (n)
 				{
 					case 0:

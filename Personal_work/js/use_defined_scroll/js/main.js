@@ -2,9 +2,7 @@
 define(function (require, exports, module){
 	var addEvent=require('base').addEvent;
 	var removeEvent=require('base').removeEvent;
-	var getStyle=require('base').getStyle;
 	var getPos=require('base').getPos;
-
 
 	exports.main=function (){
 
@@ -19,7 +17,8 @@ define(function (require, exports, module){
 			//计算oCont的高度
 			var oContH=oCont.offsetHeight;
 			//计算oContBox的高度
-			var oContBoxH=parseInt(getStyle(oContBox, 'height'));
+			var oContBoxH=oContBox.offsetHeight;
+
 			//计算oCont的最大top值
 			var maxContTop=oContH-oContBoxH;
 			//设置oI的高度 让它自适应

@@ -3,14 +3,14 @@ define(function (require, exports, module){
 
 	var move=require('move').move;
 	var Tween=require('tween').Tween;
-	var doMove=require('domove').doMove;
 
 	var enter=require('hover').enter;
 	var leave=require('hover').leave;
 
+	var doMove=require('domove').doMove;
+
 	var addEvent=require('base').addEvent;
 	var addWheel=require('base').addWheel;
-	var startMove=require('base').startMove;
 	var rmd=require('base').rmd;
 	
 
@@ -27,6 +27,8 @@ define(function (require, exports, module){
 		var aDivBox=oPos.children;
 		//获取右边nav的父级下的所有a标签
 		var aA=oPos.getElementsByTagName('a');
+		var aSpan2=oPos.getElementsByTagName('span');
+
 		//获取正文内容的父级
 		var oBox=document.getElementById('box');
 		//获取正文内容的父级下的所有子集
@@ -36,6 +38,15 @@ define(function (require, exports, module){
 		var oNav=document.getElementById('nav');
 		var oNavBox=document.getElementById('nav_box');
 		var oNavPos=document.getElementById('nav_pos');
+
+		var iClientHeigt=document.documentElement.clientHeight;
+
+		//work 的js
+		(function (){
+			var oWorksBox=document.getElementById('worksBox');
+			oWorksBox.style.paddingTop=iClientHeigt/100*25+'px';
+		})();
+		
 
 
 		//公共元素
@@ -47,11 +58,41 @@ define(function (require, exports, module){
 
 		//oProBox
 		var oProBox=document.getElementById('production_box');
-		var aSpan=document.getElementById('production_box').getElementsByTagName('span');
+		var aSpan=oProBox.getElementsByTagName('span');
 		var oIframeBox=document.getElementById('iframe_box');
 		var aIframeEm=oIframeBox.getElementsByTagName('em');
 		
+		//oProBox的高度设置
+		oProBox.style.height=iClientHeigt/100*80+'px';
+		oProBox.style.paddingTop=iClientHeigt/100*5+'px';
 
+		//设置右侧nav的高度
+		for (var i=0; i<oPos.children.length; i++){
+			oPos.children[i].style.width=iClientHeigt/100*24+'px';
+			oPos.children[i].style.height=iClientHeigt/100*10+'px';
+
+		}
+		//设置span的高度
+		for (var i=0; i<aSpan2.length; i++){
+
+			aSpan2[i].style.width=iClientHeigt/100*10+'px';
+			aSpan2[i].style.height=iClientHeigt/100*10+'px';
+			aSpan2[i].style.lineHeight=iClientHeigt/100*10+'px';
+		}
+		//设置span下的i字体大小
+
+		//oIframeBox的高度设置
+		var aFrame=oIframeBox.getElementsByTagName('iframe');
+
+		for (var i=0; i<aFrame.length; i++){
+			aFrame[i].style.height=iClientHeigt/100*80+'px';
+		}
+
+		//oProBox子集的高度设置
+		for (var i=0; i<oProBox.children.length; i++){
+			oProBox.children[i].style.height=iClientHeigt/100*20+'px';
+			oProBox.children[i].style.lineHeight=iClientHeigt/100*20+'px';
+		}
 		//oProBox子集的移入效果
 		for (var i=0; i<oProBox.children.length; i++)
 		{
@@ -82,33 +123,27 @@ define(function (require, exports, module){
 		}
 
 
-
 		// 跳转到框架的操作
-		for (var i=0; i<oIframeBox.children.length; i++){
+		for (var i=0; i<aSpan.length; i++){
 			(function (index){
 				aSpan[i].onclick=function (){
-
 					for (var i=0; i<oIframeBox.children.length; i++){
 						oIframeBox.children[i].style.display='none';
 					}
 					oProBox.style.display='none';
 					oIframeBox.children[index].style.display='block';
-
 				}
-
 			})(i);
 		}
 
-		
 		// 跳转到框架之后的每一页的 关闭按钮
-		for (var i=0; i<aIframeEm.length; i++){
-			(function (index){
-				aIframeEm[i].onclick=function (){
-					aIframeEm[index].parentNode.style.display='none';
-					oProBox.style.display='block';
-
-				}
-			})(i);
+		for (var i=0; i<aIframeEm.length; i++){	
+			aIframeEm[i].onclick=function (){
+				for (var i=0; i<oIframeBox.children.length; i++){
+					oIframeBox.children[i].style.display='none';
+				}	
+				oProBox.style.display='block';	
+			}
 		}
 		
 
@@ -546,9 +581,10 @@ define(function (require, exports, module){
 
 				oPrevMask.onmousedown=function ()
 				{
+					
 					clearInterval(timer5);
 					gotoImg(true);
-					return false;
+					
 				};
 
 
@@ -585,34 +621,69 @@ define(function (require, exports, module){
 
 				oNextMask.onmousedown=function ()
 				{
+					
 					clearInterval(timer5);
 					gotoImg(false);
-					return false;
+					
 				};
+
+
+				//startMove 运动形式
+				function startMove(obj, oParams, iTime, fnCallBackEnd)
+				{
+					var iInterval=30;
+					var iEndTime=(new Date()).getTime()+iTime;
+					var iTimes=Math.ceil(iTime/iInterval);
+					var oSpeed={};
+
+					if(typeof obj.timer=='undefined')
+					{
+						obj.timer=null;
+					}
+
+					for(var key in oParams)
+					{
+						oSpeed[key]=(oParams[key]-obj[key])/iTimes;
+					}
+
+					if(obj.timer)
+					{
+						clearInterval(obj.timer);
+						
+					}
+					obj.timer=setInterval
+					(
+						function ()
+						{
+							doMove(obj, oParams, oSpeed, iEndTime, fnCallBackEnd);
+						}, iInterval);
+				}
 
 				function gotoImg(bLeft)
 				{
 					if(bLeft)
 					{
 						aLiInit.push(aLiInit.shift());
+
 					}
 					else
 					{
 						aLiInit.unshift(aLiInit.pop());
+
 					}
 
-				oLine.style.display='none';
+					oLine.style.display='none';
 
-				for(i=0;i<aLi.length;i++)
-				{
-					startMove(aLi[i], {left: aLiInit[i].l, top: aLiInit[i].t, width: aLiInit[i].w, height:aLiInit[i].h, alpha:aLiInit[i].alpha, zIndex:aLiInit[i].z}, 300, function (){oLine.style.display='block';});
-				}
-				
-				for(i=0;i<aLi.length;i++)
-				{
-					startMove(aLi[i], {left: aLiInit[i].l, top: aLiInit[i].t, width: aLiInit[i].w, height:aLiInit[i].h, alpha:aLiInit[i].alpha, zIndex:aLiInit[i].z}, 300);
-				}
-			};
+					for(i=0;i<aLi.length;i++)
+					{
+						startMove(aLi[i], {left: aLiInit[i].l, top: aLiInit[i].t, width: aLiInit[i].w, height:aLiInit[i].h, alpha:aLiInit[i].alpha, zIndex:aLiInit[i].z}, 300, function (){oLine.style.display='block';});
+					}
 
-		}
-	});
+					for(i=0;i<aLi.length;i++)
+					{
+						startMove(aLi[i], {left: aLiInit[i].l, top: aLiInit[i].t, width: aLiInit[i].w, height:aLiInit[i].h, alpha:aLiInit[i].alpha, zIndex:aLiInit[i].z}, 300);
+					}
+				};
+
+			}
+		});

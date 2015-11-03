@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="" rel="stylesheet">
+	<style type="text/css">
+
+	</style>
+	<script>
+		window.onload = function ()
+		{
+			var arr=[1, 2, 4, 2, 2, 3, 5, 2, 6];
+			var json={};
+
+			for (var i=0; i<arr.length; i++){
+				var name=arr[i];
+				if (json[name] === undefined){
+					json[name]=1;
+				}else{
+					json[name]++;
+				}
+			}
+
+			var n=0;
+			var s=0;
+			for (var name in json){
+				if (json[name] > n){
+					n=json[name];
+					s=name;
+				}
+			}
+
+			alert('出现最多的数字是'+s+'总共出现了'+n+'次')
+			console.log(json);
+		};
+	</script>
+</head>
+<body>
+
+</body>
+</html>

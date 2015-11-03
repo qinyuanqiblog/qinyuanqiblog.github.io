@@ -7,8 +7,6 @@ define(function (require, exports, module){
 		//获取元素
 		var oBtn=document.getElementById('btn');
 		var oDiv=document.getElementById('div1');	
-
-		//获取oDiv半径
 		
 		//设置需要oDiv子集创建的个数
 		var total=5;
@@ -31,6 +29,7 @@ define(function (require, exports, module){
 		
 		//oBtn的点击事件
 		oBtn.onclick=function (){
+			
 			var R=oDiv.offsetWidth/2;
 			//点击时让span显示	
 			for (var i=0; i<aSpan.length; i++){
