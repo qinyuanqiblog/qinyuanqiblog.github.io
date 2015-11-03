@@ -66,18 +66,23 @@ define(function (require, exports, module){
 		oProBox.style.height=iClientHeigt/100*80+'px';
 		oProBox.style.paddingTop=iClientHeigt/100*5+'px';
 
+		var iSbH=iClientHeigt/100*10;
+
 		//设置右侧nav的高度
 		for (var i=0; i<oPos.children.length; i++){
-			oPos.children[i].style.width=iClientHeigt/100*24+'px';
-			oPos.children[i].style.height=iClientHeigt/100*10+'px';
+			oPos.children[i].style.width=iSbH*2+'px';
+			oPos.children[i].style.height=iSbH+'px';
 
 		}
 		//设置span的高度
 		for (var i=0; i<aSpan2.length; i++){
 
-			aSpan2[i].style.width=iClientHeigt/100*10+'px';
-			aSpan2[i].style.height=iClientHeigt/100*10+'px';
-			aSpan2[i].style.lineHeight=iClientHeigt/100*10+'px';
+			aSpan2[i].style.width=iSbH+'px';
+			aSpan2[i].style.height=iSbH+'px';
+			aSpan2[i].style.lineHeight=iSbH+'px';
+			if (i%2 == 1){
+				aSpan2[i].style.fontSize=iClientHeigt/100*3+'px';	
+			}
 		}
 		//设置span下的i字体大小
 
@@ -156,7 +161,7 @@ define(function (require, exports, module){
 
 			for (var i=0; i<arrPos.length; i++){
 				oPos.children[i].style.top=arrPos[i].top+'px';
-				oPos.children[i].style.right='-97px';
+				oPos.children[i].style.right=-iSbH+'px';
 				oPos.children[i].style.position='absolute';
 			}
 
@@ -167,7 +172,7 @@ define(function (require, exports, module){
 
 						iNow=index;
 						for (var i=0; i<aA.length; i++){
-							move(aA[i].parentNode, {right:-97},{duration:200});
+							move(aA[i].parentNode, {right:-iSbH},{duration:200});
 							move(oBox, {top:liW*i});
 							aDivBox[i].style.background=arr[index];
 						}
@@ -185,7 +190,7 @@ define(function (require, exports, module){
 					
 					addEvent(aA[i].parentNode, 'mouseover', function (){
 						for (var i=0; i<aA.length; i++){
-							move(aA[i].parentNode, {right:-97},{duration:100});
+							move(aA[i].parentNode, {right:-iSbH},{duration:100});
 						}	
 						move(aA[index].parentNode, {right:0}, {duration:100});
 
@@ -194,9 +199,9 @@ define(function (require, exports, module){
 
 					addEvent(aA[i].parentNode, 'mouseout', function (){
 						for (var i=0; i<aA.length; i++){
-							move (aA[i].parentNode, {right:-97},{duration:100});
+							move (aA[i].parentNode, {right:-iSbH},{duration:100});
 						}	
-						move(aA[index].parentNode, {right:-97}, {duration:100});
+						move(aA[index].parentNode, {right:-iSbH}, {duration:100});
 						move(aA[iNow].parentNode, {right:0})
 					});
 
@@ -209,7 +214,7 @@ define(function (require, exports, module){
 					addEvent(oNavBox.children[i],'click',function (){
 						iNow=index;
 						for (var i=0; i<oNavBox.children.length; i++){
-							move(aA[i].parentNode, {right:-97});
+							move(aA[i].parentNode, {right:-iSbH});
 							aDivBox[i].style.background=arr[index];
 						}
 						move(oBox, {top:-liW*index},{easing:Tween.Sine.easeInOut});
@@ -261,7 +266,7 @@ define(function (require, exports, module){
 						complete:function (){
 							//清空所有
 							for (var i=0; i<aA.length; i++){
-								move(aA[i].parentNode, {right:-97}, {duration:200});
+								move(aA[i].parentNode, {right:-iSbH}, {duration:200});
 								aDivBox[i].style.background=arr[iNow];
 							}
 							//当前的显示
@@ -272,7 +277,7 @@ define(function (require, exports, module){
 					//让头部的nav显示
 					move(oNav, {top:0});
 					for (var i=0; i<aA.length; i++){
-						move(aA[i].parentNode, {right:-97}, {duration:200});
+						move(aA[i].parentNode, {right:-iSbH}, {duration:200});
 					}		
 					move(oPos, {right:-200});
 					

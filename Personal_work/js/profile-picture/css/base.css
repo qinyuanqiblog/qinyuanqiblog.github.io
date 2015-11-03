@@ -1,0 +1,5 @@
+	#div1 { width: 400px; height: 400px; border:1px solid #fff; position: relative; margin:100px auto; border-radius:50%; }		
+	#div1 span { width: 200px; height: 200px; position:absolute; left: 50%; top:0; margin-left: -100px; margin-top:-100px;  border-radius:50%; display: none;}
+	#div1 img { width:200px; height: 200px; border-radius: 50%; border:1px solid #f69;  }	
+
+	#btn { width:200px; height: 200px; background: green; position: absolute; left: 50%; top:50%; margin-left: -100px; margin-top: -100px; border-radius: 50%;  font-size:30px; color:red; font-weight:bold; line-height: 200px; text-align: center;  cursor: pointer; background: url(../images/1.jpg) no-repeat; }
