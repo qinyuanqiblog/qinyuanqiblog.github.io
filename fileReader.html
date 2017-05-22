@@ -79,21 +79,22 @@
 <script>
   /** 思路
      *
-     * 1. 使用fileReader API 读取到图片
-     * 2. 生成previewCanvas预览图片
-     * 3. 在canvas上处理图片的滤镜和裁剪
+     * 1.  使用fileReader API 读取到图片
+     * 2.  生成previewCanvas预览图片
+     * 3.  在previewCanvas上处理图片的滤镜和裁剪
      * 3.1 在previewCanvas上进行图片滤镜处理(canvas的像素级处理)
-     * 3.2 把需要截取的图像写入到compareCanvs上，之后再和previewCanvas对比
-     * 3.3 在clipCanvas上进行拖动预览
-     * 3.4 把clipCanvas上的图片转换成blob对象的地址
-     * 4. 图片平移这一块使用到了css3的 matrix 相关的知识
-     *      transform:matrix(a,b,c,d,e,f)
+     * 3.2 把需要截取的图像写入到compareCanvs上，之后再和previewCanvas对比, 生成clipCanvas(裁剪图片之后的canvas)
+     * 3.3 在clipCanvas上进行拖动并生成预览
+     * 3.3.1  图片平移这一块使用到了css3的 matrix 相关的知识
+     *        transform:matrix(a,b,c,d,e,f)
      *          a 水平缩放 (1)
      *          b 水平倾斜 (0)
      *          c 垂直倾斜 (0)
      *          d 垂直缩放 (1)
      *          e 水平位移 (0)
      *          f 垂直位移 (0)
+     * 3.4 把clipCanvas上的图片转换成blob对象的地址 并生成预览图片
+     *
      */
     var input = document.querySelector('input');
     var previewCanvas = document.querySelector('#previewCanvas');
