@@ -13,12 +13,18 @@
         .mergeBox {
             display: inline-block;
             position: relative;
+            width: 200px;
+            height: 200px;
             z-index: 0;
-            top: 4px;
+            top: 0;
             overflow: hidden;
         }
 
         #mergeCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
             width: 200px;
             height: 200px;
         }
@@ -77,7 +83,7 @@
     </div>
 </body>
 <script>
-  /** 思路
+    /** 思路
      *
      * 1.  使用fileReader API 读取到图片
      * 2.  生成previewCanvas预览图片
@@ -85,7 +91,7 @@
      * 3.1 在previewCanvas上进行图片滤镜处理(canvas的像素级处理)
      * 3.2 把需要截取的图像写入到compareCanvs上，之后再和previewCanvas对比, 生成clipCanvas(裁剪图片之后的canvas)
      * 3.3 在clipCanvas上进行拖动并生成预览
-     * 3.3.1  图片平移这一块使用到了css3的 matrix 相关的知识
+     * 3.3.1  图片平移这一块使用到了css3的 matrix 相关的知识 其实也可以使用定位来实现的，后来的这个版本我就改用了定位来做的
      *        transform:matrix(a,b,c,d,e,f)
      *          a 水平缩放 (1)
      *          b 水平倾斜 (0)
@@ -138,7 +144,7 @@
         compareImg.crossOrigin = "Anonymous"; //解决跨域
         compareImg.src = 'http://qinyuanqiblog.github.io/images/angular/shape_lingxing.png';
 
-        compareImg.onload = function () {
+        compareImg.onload = function() {
             compareCtx.drawImage(this, 0, 0, previewWidth, previewHeight);
         }
     }
@@ -150,7 +156,7 @@
         var reader = new FileReader();
 
         //读取文件成功
-        reader.onload = function () {
+        reader.onload = function() {
             createPreviewToCanvas(reader.result);
         }
         //返回一个基于Base64编码编码的数据URI对象
@@ -164,7 +170,7 @@
     function createPreviewToCanvas(dataURL) {
         previewImg = new Image();
         previewImg.src = dataURL;
-        previewImg.onload = function () {
+        previewImg.onload = function() {
             previewCtx.drawImage(previewImg, 0, 0, previewWidth, previewHeight);
         }
         createCompareImg();
@@ -172,7 +178,7 @@
     }
 
     //合并图片
-    merge.addEventListener('click', function () {
+    merge.addEventListener('click', function() {
 
         mergeDiv.style.display = 'block';
         mergeCanvas.width = previewWidth;
@@ -182,9 +188,9 @@
     });
 
     //滤镜处理
-    inverse.addEventListener('click', function (){
+    inverse.addEventListener('click', function() {
         var previewData = previewCtx.getImageData(0, 0, previewWidth, previewHeight);
-        for (var i=0; i< previewData.data.length; i+=4){
+        for (var i = 0; i < previewData.data.length; i += 4) {
             previewData.data[i] = 255 - previewData.data[i];
             previewData.data[i + 1] = 255 - previewData.data[i + 1];
             previewData.data[i + 2] = 255 - previewData.data[i + 2];
@@ -246,23 +252,35 @@
         clipCtx.putImageData(proviewImgData, 0, 0);
     }
 
+
+    var mergeCanvasLeft = 0;
+    var mergeCanvasTop = 0;
+
     function mouseDownFn(e) {
         var event = e || ev;
         disX = event.offsetX;
         disY = event.offsetY;
+
+        mergeCanvasLeft = mergeCanvas.style.left == false ? 0 :  mergeCanvas.style.left;
+        mergeCanvasTop =  mergeCanvas.style.top == false ? 0 : mergeCanvas.style.top;
         isDrag = true;
     }
 
     function mouseMoveFn(e) {
         if (isDrag) {
             var event = e || ev;
-            var left = event.offsetX - disX;
-            var top = event.offsetY - disY;
+            var left = event.offsetX - disX + parseInt(mergeCanvasLeft);
+            var top = event.offsetY - disY + parseInt(mergeCanvasTop);
+            //也可以使用矩阵或者是translate 来做， 我现在的做法是改成了定位的形式
+            // mergeCanvas.style.transform = 'matrix(1,0,0,1,' + left + ',' + top + ')';
 
-            mergeCanvas.style.transform = 'matrix(1,0,0,1,' + left + ',' + top + ')';
-
+            mergeCanvas.style.left = left + 'px';
+            mergeCanvas.style.top = top + 'px';
+            // 裁剪图片 生成预览图
             clipImg(left, top);
-            ool = left;
+
+            //裁剪位置控制
+            clipDx = left;
             clipDy = top;
         }
     }
