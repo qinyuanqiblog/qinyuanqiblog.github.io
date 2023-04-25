@@ -158,37 +158,37 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     sidebar: 'structuring',
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
-    // author: {
-    //   name: 'xugaoyi', // 必需
-    //   link: 'https://github.com/xugaoyi', // 可选的
-    // },
+    author: {
+      name: 'qinyuanqi', // 必需
+      link: 'https://github.com/qinyuanqiblog', // 可选的
+    },
 
     // 博主信息 (显示在首页侧边栏)
-    // blogger: {
-    //   avatar: 'https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
-    //   name: 'Evan Xu',
-    //   slogan: '前端界的小学生',
-    // },
+    blogger: {
+      avatar: 'https://avatar-static.segmentfault.com/192/812/192812280-5ec40e5e3bdc0_huge256',
+      name: 'qinyuanqi',
+      slogan: '搬砖使我变强！冲！！！',
+    },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
     social: {
       // iconfontCssFile: '//at.alicdn.com/t/xxx.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自己添加。阿里图片库：https://www.iconfont.cn/
       icons: [
-        // {
-        //   iconClass: 'icon-youjian',
-        //   title: '发邮件',
-        //   link: 'mailto:894072666@qq.com',
-        // },
-        // {
-        //   iconClass: 'icon-github',
-        //   title: 'GitHub',
-        //   link: 'https://github.com/xugaoyi',
-        // },
-        // {
-        //   iconClass: 'icon-erji',
-        //   title: '听音乐',
-        //   link: 'https://music.163.com/#/playlist?id=755597173',
-        // },
+        {
+          iconClass: 'icon-youjian',
+          title: '发邮件',
+          link: 'mailto:592644285@qq.com',
+        },
+        {
+          iconClass: 'icon-github',
+          title: 'GitHub',
+          link: 'https://github.com/qinyuanqiblog',
+        },
+        {
+          iconClass: 'icon-erji',
+          title: '听音乐',
+          link: 'https://music.163.com/playlist?id=114520484',
+        },
       ],
     },
 
