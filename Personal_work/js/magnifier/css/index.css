@@ -1,5 +1,0 @@
-#div1 {width:312px; height:220px; position:relative; margin:50px auto; border:1px solid #CCC;}
-#div1 .mask {width:100px; height:100px; background:#000; filter:alpha(opacity:60); opacity:0.6; position:absolute; left:0; top:0; display:none;}
-#div1 .big_img {position:absolute; left:330px; top:0; width:310px; height:310px; overflow:hidden; display:none; border:1px solid #CCC;}
-#div1 .big_img img {position:absolute; left:0; top:0;}
-#div1 img {display:block;}

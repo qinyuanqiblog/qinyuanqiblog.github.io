@@ -1,8 +1,0 @@
-	body { text-align: center; padding-top: 100px }
-	#box { position: relative; width: 651px; margin:50px auto; }
-	img { width: 270px; height: 128px; }
-	input[type=text] { width: 540px; height: 40px; text-indent: 1em;  border:1px solid blue;}
-	input[type=button] { width: 100px; height: 44px; margin-left: -1px; cursor:pointer; background: #ccc; }
-	ul { width: 541px; border:1px solid blue; position: absolute; left: 0; top:44px; display: none; margin-top:-2px; }
-	li { list-style: none; height: 40px; line-height: 40px; cursor:pointer; text-align: left; text-indent: 2em; font-weight: bold; font-size: 20px; }
-	.active { background: #ccc; }

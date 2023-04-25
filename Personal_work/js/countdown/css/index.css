@@ -1,8 +1,0 @@
-.box { background: #000; width: 1000px; height: 500px; margin:100px auto; font-size:50px; color:#fff; text-align: center;   }
-.box span { font-size: 80px; color:red; margin-top:20px; display: block; font-weight:bold; font-weight:bold; }
-.box p { color: green; font-weight: bold; }
-.box input { height: 50px; width: 100px; background: #fff; float: left; padding-left: 5px;font-size: 20px; font-weight: bold; color:#f69; }
-.box  ul { text-align: center; }
-.box li {  list-style: none;  width: 100%;margin-top:20px; }
-.box em {  float: left; margin:0 10px; height: 50px; width: 50px; }
-.l1 { margin-left: 26%;	}
