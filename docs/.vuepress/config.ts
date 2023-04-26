@@ -83,7 +83,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: 'window环境工具推荐',
+        text: 'window系统工具推荐',
         items: [
           {
             text: 'Vscode',
