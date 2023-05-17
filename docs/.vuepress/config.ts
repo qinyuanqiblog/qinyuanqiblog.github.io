@@ -326,6 +326,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         },
       },
     ],
+    [
+      'vuepress-plugin-sitemap', // "上次更新"时间格式
+      {
+        hostname: 'https://qinyuanqiblog.github.io'
+      },
+    ],
   ],
 
   markdown: {
