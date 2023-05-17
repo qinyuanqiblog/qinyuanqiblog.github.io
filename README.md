@@ -8,4 +8,4 @@
 
 [线上地址](https://qinyuanqiblog.github.io/meimei/)
 
-## 喜欢菜鸡博主，愿意鼓励一下我的，请帮忙点个小星星鼓励一下，谢谢
+## 支持博主的，请赏一个start,谢谢~
