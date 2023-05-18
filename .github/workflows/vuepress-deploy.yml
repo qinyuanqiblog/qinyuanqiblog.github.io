@@ -1,0 +1,15 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: vuepress-deploy
+      uses: qinyuanqi
+      env:
+        ACCESS_TOKEN: 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
+        TARGET_REPO: qinyuanqiblog/qinyuanqiblog.github.io
+        TARGET_BRANCH: master
+        BUILD_SCRIPT: yarn && yarn build
+        BUILD_DIR: meimei
+        CNAME: http://qinyuanqiblog.github.io
