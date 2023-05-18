@@ -11,5 +11,5 @@ jobs:
         TARGET_REPO: qinyuanqiblog/qinyuanqiblog.github.io
         TARGET_BRANCH: master
         BUILD_SCRIPT: yarn && yarn build
-        BUILD_DIR: meimei
+        BUILD_DIR: ./meimei
         CNAME: http://qinyuanqiblog.github.io
