@@ -16,13 +16,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     '/': {
       lang: 'zh-CN',
       title: "小梅梅的二狗子",
-      description: '记录时光',
+      description: '记录时光, 小梅梅的二狗子',
     }
   },
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
 
   title: "小梅梅的二狗子",
-  description: "记录时光",
+  description: "记录时光, 小梅梅的二狗子",
   // 打包后的根路径，同一个域名多目录部署的时候需要
   base: '/meimei/',
   // 打包后的包名
