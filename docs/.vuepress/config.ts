@@ -26,9 +26,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   title: "小梅梅的二狗子",
   description: "记录时光, 小梅梅的二狗子",
   // 打包后的根路径，同一个域名多目录部署的时候需要
-  base: '/meimei/',
+  // base: './',
   // 打包后的包名
-  dest: 'meimei',
+  // dest: 'meimei',
   configureWebpack: {
     resolve: {
       alias: {
@@ -216,7 +216,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       blogCreate: '2023-04-25', // 博客创建时间
       indexView: true,  // 开启首页的访问量和排名统计，默认 true（开启）
       pageView: true,  // 开启文章页的浏览量统计，默认 true（开启）
-      readingTime: true,  // 开启文章页的预计阅读时间，条件：开启 eachFileWords，默认 true（开启）。可在 eachFileWords 的 readEachFileWords 的第二个和第三个参数自定义，默认 1 分钟 300 中文、160 英文
+      readingTime: true,  // 开启文章页的预计阅读时间，条件：开启 eachdileWords，默认 true（开启）。可在 eachFileWords 的 readEachFileWords 的第二个和第三个参数自定义，默认 1 分钟 300 中文、160 英文
       eachFileWords: readEachFileWords([''], 300, 160),  // 开启每个文章页的字数。readEachFileWords(['xx']) 关闭 xx 目录（可多个，可不传参数）下的文章页字数和阅读时长，后面两个参数分别是 1 分钟里能阅读的中文字数和英文字数。无默认值。readEachFileWords() 方法默认排除了 article 为 false 的文章
       mdFileCountType: 'archives',  // 开启文档数。1. archives 获取归档的文档数（默认）。2. 数组 readFileList(['xx']) 排除 xx 目录（可多个，可不传参数），获取其他目录的文档数。提示：readFileList() 获取 docs 下所有的 md 文档（除了 `.vuepress` 和 `@pages` 目录下的文档）
       totalWords: 'archives',  // 开启本站文档总字数。1. archives 获取归档的文档数（使用 archives 条件：传入 eachFileWords，否则报错）。2. readTotalFileWords(['xx']) 排除 xx 目录（可多个，可不传参数），获取其他目录的文章字数。无默认值
