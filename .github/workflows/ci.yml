@@ -36,6 +36,7 @@ jobs:
           yarn
           export NODE_OPTIONS=--openssl-legacy-provider
           yarn build
+          cd docs/.vuepress/meimei
           git config --global init.defaultBranch $deploy_branch
           git init
           git config user.name ${user_name}
