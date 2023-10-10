@@ -84,3 +84,9 @@ tagline: Web前端技术博客，积跬步以至千里，致敬每个爱学习�
 - **GitHub**: <https://github.com/xugaoyi>
 
 </br>  -->
+
+<ClientOnly>
+  <div style="padding:20px;">
+    <WebInfo/>
+  </div>
+</ClientOnly>

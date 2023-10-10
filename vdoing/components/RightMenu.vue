@@ -4,11 +4,11 @@
       <div class="right-menu-title">目录</div>
       <div class="right-menu-content">
         <div
-          :class="[
-            'right-menu-item',
+          :class="{
+            'right-menu-item': true,
             'level' + item.level,
             { active: item.slug === hashText }
-          ]"
+          }"
           v-for="(item, i) in headers"
           :key="i"
         >

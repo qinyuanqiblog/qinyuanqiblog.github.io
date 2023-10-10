@@ -1,3 +1,7 @@
+## 欢迎来到小梅梅的二狗子的个人站
+
+* 分享一些工作和生活上用到的东西，实用性为主
+
 ## 个人博客，技术选型 vdoing
 
 * [vdoing](https://github.com/xugaoyi/vuepress-theme-vdoing)
@@ -8,4 +12,4 @@
 
 [线上地址](https://qinyuanqiblog.github.io/meimei/)
 
-## 支持博主的，请赏一个start,谢谢~
+## 支持博主的，请留下一颗小星星 予以鼓励哦 ，谢谢~
