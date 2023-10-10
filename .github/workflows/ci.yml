@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout # 步骤1
@@ -34,6 +34,7 @@ jobs:
           user_email=`git log -1 --pretty=format:'%ae'`
           deploy_branch=gh-pages
           yarn
+          export NODE_OPTIONS=--openssl-legacy-provider
           yarn build
           cd docs/.vuepress/meimei
           git config --global init.defaultBranch $deploy_branch
