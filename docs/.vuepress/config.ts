@@ -26,9 +26,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   title: "小梅梅的二狗子",
   description: "记录时光, 小梅梅的二狗子",
   // 打包后的根路径，同一个域名多目录部署的时候需要
-  // base: './',
+  // base: '/meimei/',
   // 打包后的包名
-  // dest: 'meimei',
+  dest: 'meimei',
   configureWebpack: {
     resolve: {
       alias: {
