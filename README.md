@@ -2,6 +2,9 @@
 
 * 分享一些工作和生活上用到的东西，实用性为主
 
+## vdoing 版本问题： 注意：使用主题 v1.12.9 时，请使用 nodejs 18.x 及以上版本，并且在dev、build前添加export NODE_OPTIONS=--openssl-legacy-provider
+> 这个其实是webpack的问题导致的， node 18.0 版本以后有时候会报错： Error: error:0308010C:digital envelope routines::unsupported
+
 ## 个人博客，技术选型 vdoing
 
 * [vdoing](https://github.com/xugaoyi/vuepress-theme-vdoing)
